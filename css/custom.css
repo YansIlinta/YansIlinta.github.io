@@ -57,6 +57,7 @@ body::before {
 }
 
 .layout > div:first-child:not(.nc),
+#recent-posts .journal-card,
 #recent-posts .recent-post-item,
 #aside-content .card-widget,
 .layout .pagination > *:not(.space) {
@@ -69,6 +70,170 @@ body::before {
 
 #recent-posts .recent-post-item {
   overflow: hidden;
+}
+
+.journal-home {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.8fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.journal-card {
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+.journal-today {
+  grid-row: span 2;
+}
+
+.journal-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--xuan-main);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.journal-today h2 {
+  margin: 1rem 0 0.7rem;
+  color: var(--xuan-text);
+  font-size: 1.85rem;
+  line-height: 1.2;
+}
+
+.journal-today p {
+  margin: 0;
+  color: var(--xuan-muted);
+}
+
+.journal-note-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.journal-note {
+  min-width: 0;
+  border-radius: 8px;
+  padding: 0.85rem;
+  background: rgba(61, 124, 152, 0.08);
+}
+
+.journal-note span,
+.progress-meta span,
+.journal-recent-list span {
+  display: block;
+  color: var(--xuan-muted);
+  font-size: 0.82rem;
+}
+
+.journal-note strong,
+.journal-note a {
+  display: block;
+  margin-top: 0.35rem;
+  overflow: hidden;
+  color: var(--xuan-text);
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.progress-meta strong {
+  color: var(--xuan-main);
+  font-size: 0.86rem;
+}
+
+.progress-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(61, 124, 152, 0.12);
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--xuan-main), #d97745);
+}
+
+.journal-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.journal-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+  border-radius: 8px;
+  padding: 0.7rem 0.75rem;
+  color: var(--xuan-text);
+  background: rgba(61, 124, 152, 0.08);
+}
+
+.journal-links a:hover {
+  color: #fff;
+  background: linear-gradient(135deg, var(--xuan-main), #5aa4b8);
+}
+
+.journal-links span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.journal-recent {
+  grid-column: 1 / -1;
+}
+
+.journal-recent-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.journal-recent-list a {
+  min-width: 0;
+  border-radius: 8px;
+  padding: 0.85rem;
+  color: var(--xuan-text);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.journal-recent-list a:hover {
+  color: var(--xuan-main);
+  background: rgba(61, 124, 152, 0.1);
+}
+
+.journal-recent-list strong {
+  display: block;
+  margin-top: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #recent-posts .recent-post-item:hover,
@@ -244,5 +409,17 @@ a.xuan-calendar-day {
 
   .layout {
     padding: 1rem;
+  }
+
+  .journal-home,
+  .journal-note-grid,
+  .journal-recent-list {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-today,
+  .journal-recent {
+    grid-column: auto;
+    grid-row: auto;
   }
 }

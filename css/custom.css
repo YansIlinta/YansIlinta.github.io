@@ -92,13 +92,6 @@ body::before {
   background: rgba(61, 124, 152, 0.08);
 }
 
-.workspace-row-head {
-  color: var(--xuan-muted);
-  background: rgba(61, 124, 152, 0.12);
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
 a.workspace-row:hover {
   color: #fff;
   background: linear-gradient(135deg, var(--xuan-main), #5aa4b8);
@@ -244,6 +237,30 @@ a.xuan-calendar-day {
   font-weight: 800;
   background: linear-gradient(135deg, var(--xuan-main), #5aa4b8);
   box-shadow: 0 8px 18px rgba(61, 124, 152, 0.28);
+}
+
+.xuan-calendar-posts {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+
+.xuan-calendar-posts a {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  color: var(--xuan-text);
+  background: rgba(61, 124, 152, 0.08);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xuan-calendar-posts a:hover {
+  color: #fff;
+  background: linear-gradient(135deg, var(--xuan-main), #5aa4b8);
 }
 
 #article-container {

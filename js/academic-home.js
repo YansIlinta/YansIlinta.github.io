@@ -51,19 +51,10 @@
   }
 
   const section = el('section', 'xuan-academic-home');
-  const profile = el('div', 'xuan-home-profile');
-  const avatar = el('img', 'xuan-home-avatar');
-  avatar.src = '/imk/tak.jpg';
-  avatar.alt = data.title;
-
-  const copy = el('div', 'xuan-home-copy');
-  copy.appendChild(el('span', 'xuan-home-kicker', 'Creator archive'));
-  copy.appendChild(el('h2', 'xuan-home-title', data.title));
-  copy.appendChild(el('p', 'xuan-home-intro en', data.intro_en));
-  copy.appendChild(el('p', 'xuan-home-intro zh', data.intro_zh));
-
-  profile.appendChild(avatar);
-  profile.appendChild(copy);
+  const overview = el('div', 'xuan-home-overview');
+  overview.appendChild(el('span', 'xuan-home-kicker', 'Creator archive'));
+  overview.appendChild(el('p', 'xuan-home-intro en', data.intro_en));
+  overview.appendChild(el('p', 'xuan-home-intro zh', data.intro_zh));
 
   const preview = el('div', 'xuan-home-preview');
   const projects = el('div', 'xuan-home-group');
@@ -81,7 +72,7 @@
 
   preview.appendChild(projects);
   preview.appendChild(articles);
-  section.appendChild(profile);
+  section.appendChild(overview);
   section.appendChild(preview);
   recentPosts.parentNode.insertBefore(section, recentPosts);
 })();

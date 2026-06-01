@@ -667,3 +667,172 @@ a.xuan-calendar-day {
   }
 
 }
+
+/* Academic homepage correction */
+:root {
+  --xuan-card-bg: rgba(255, 255, 255, 0.94);
+  --xuan-border: rgba(39, 55, 66, 0.13);
+  --xuan-text: #1f2a30;
+  --xuan-muted: #6b747a;
+  --xuan-main: #2d6578;
+  --xuan-accent: #9a5b37;
+  --xuan-paper: #f7f8f6;
+  --xuan-soft: rgba(45, 101, 120, 0.07);
+  --xuan-shadow: 0 8px 24px rgba(30, 42, 48, 0.07);
+}
+
+body {
+  background-attachment: scroll;
+}
+
+body::before {
+  background:
+    linear-gradient(180deg, rgba(247, 248, 246, 0.9), rgba(244, 246, 245, 0.96)),
+    linear-gradient(135deg, rgba(154, 91, 55, 0.035), rgba(45, 101, 120, 0.05));
+}
+
+#page-header.full_page {
+  height: 54vh;
+  min-height: 24rem;
+}
+
+#page-header:not(.not-top-img)::before {
+  background: linear-gradient(180deg, rgba(18, 28, 34, 0.2), rgba(18, 28, 34, 0.52));
+}
+
+#page-header #site-title {
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  font-weight: 760;
+  letter-spacing: 0;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+
+#page-header #site-subtitle {
+  max-width: 44rem;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.18rem);
+  line-height: 1.7;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.layout {
+  max-width: 1120px;
+  gap: 1rem;
+}
+
+.layout > div:first-child:not(.nc),
+#recent-posts .recent-post-item,
+#aside-content .card-widget,
+.layout .pagination > *:not(.space),
+.xuan-home-overview,
+.xuan-home-group {
+  border-color: var(--xuan-border);
+  background: var(--xuan-card-bg);
+  box-shadow: var(--xuan-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.xuan-academic-home {
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.xuan-home-overview {
+  border: 1px solid var(--xuan-border);
+  border-radius: 8px;
+  padding: 1.05rem 1.15rem;
+}
+
+.xuan-home-kicker {
+  margin-bottom: 0.35rem;
+  padding: 0;
+  background: transparent;
+  color: var(--xuan-main);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.xuan-home-title,
+.xuan-home-profile,
+.xuan-home-avatar {
+  display: none;
+}
+
+.xuan-home-intro {
+  max-width: 42rem;
+  margin: 0.28rem 0 0;
+  line-height: 1.68;
+}
+
+.xuan-home-intro.en {
+  font-size: 1rem;
+}
+
+.xuan-home-group {
+  padding: 0.95rem;
+}
+
+.xuan-home-entry {
+  min-height: 7.3rem;
+  gap: 0.34rem;
+  border-color: rgba(45, 101, 120, 0.12);
+  padding: 0.78rem 0.82rem;
+  background: rgba(255, 255, 255, 0.36);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+a.xuan-home-entry:hover {
+  border-color: rgba(45, 101, 120, 0.32);
+  background: rgba(255, 255, 255, 0.66);
+  transform: none;
+}
+
+.xuan-home-entry-type {
+  font-weight: 760;
+}
+
+#recent-posts .recent-post-item:hover,
+#aside-content .card-widget:hover,
+.layout > div:first-child:not(.nc):hover {
+  box-shadow: 0 10px 28px rgba(30, 42, 48, 0.09);
+  transform: none;
+}
+
+a.workspace-row:hover,
+#aside-content .card-info #card-info-btn,
+.xuan-calendar-day.has-post:hover,
+.xuan-calendar-day.is-today,
+.xuan-calendar-posts a:hover {
+  background: var(--xuan-main);
+}
+
+#aside-content .card-info #card-info-btn {
+  box-shadow: none;
+}
+
+#aside-content .card-info .avatar-img {
+  border-width: 2px;
+  box-shadow: 0 8px 18px rgba(40, 67, 80, 0.12);
+}
+
+[data-theme="dark"] body::before {
+  background:
+    linear-gradient(180deg, rgba(18, 23, 28, 0.88), rgba(15, 20, 24, 0.96)),
+    linear-gradient(135deg, rgba(154, 91, 55, 0.05), rgba(45, 101, 120, 0.08));
+}
+
+@media (max-width: 768px) {
+  #page-header.full_page {
+    height: 46vh;
+    min-height: 20rem;
+  }
+
+  .xuan-home-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .xuan-home-overview {
+    padding: 0.95rem;
+  }
+}
